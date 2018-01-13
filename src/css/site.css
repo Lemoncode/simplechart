@@ -1,0 +1,31 @@
+svg	{
+	width:500px;
+	height:300px;
+}
+
+svg rect {
+	fill:#ccc;
+	stroke:black;
+	stroke-width:2px;
+}
+
+
+body {
+	font-family:  Helvetica, Arial, sans-serif;
+	margin: 32px;
+}
+
+#power-gauge g.arc {
+	fill: steelblue;
+}
+
+#power-gauge g.pointer {
+	fill: #e85116;
+	stroke: #b64011;
+}
+
+#power-gauge g.label text {
+	text-anchor: middle;
+	font-size: 14px;
+	font-weight: bold;
+}
