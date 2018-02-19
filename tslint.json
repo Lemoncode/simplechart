@@ -1,8 +1,7 @@
 {
   "extends": [
     "tslint:latest",
-    "tslint-react",
-    "tslint-no-unused-expression-chai"
+    "tslint-react"
   ],
   "rules": {
     "jsx-alignment": true,
