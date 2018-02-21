@@ -1,0 +1,93 @@
+{
+  "name": "simplechart",
+  "version": "1.0.0",
+  "description": "Visualization of existing map based stats",
+  "main": "index.js",
+  "scripts": {
+    "start": "nf start",
+    "start:dev": "webpack-dev-server --config ./config/webpack/dev.js",
+    "start:prod": "cross-env REST_ENV=real NODE_ENV=production webpack-dev-server --config ./config/webpack/prod.js",
+    "build": "npm run build:dev",
+    "build:dev": "rimraf dist && webpack --config ./config/webpack/dev.js",
+    "build:prod": "rimraf dist && cross-env REST_ENV=real NODE_ENV=production webpack -p --config ./config/webpack/prod.js",
+    "lint": "tslint -c ./tslint.json --force src/**/*.ts src/**/*.tsx",
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose -i"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemoncode/simplechart.git"
+  },
+  "author": "Lemoncode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Lemoncode/simplechart"
+  },
+  "homepage": "https://github.com/Lemoncode/simplechart#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "material-ui": "^0.20.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.1.3",
+    "react-router-dom": "^4.2.2",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/deep-freeze": "^0.1.1",
+    "@types/enzyme": "^3.1.9",
+    "@types/jest": "^22.1.3",
+    "@types/material-ui": "^0.20.7",
+    "@types/node": "^9.4.6",
+    "@types/react": "^16.0.38",
+    "@types/react-dom": "^16.0.4",
+    "@types/react-router-dom": "^4.2.4",
+    "@types/redux-mock-store": "0.0.13",
+    "@types/webpack-env": "^1.13.5",
+    "awesome-typescript-loader": "^3.4.1",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.28.9",
+    "deep-freeze": "0.0.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "foreman": "^2.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "if-env": "^1.0.4",
+    "jest": "^22.3.0",
+    "node-sass": "^4.7.2",
+    "raf": "^3.4.0",
+    "redux-mock-store": "1.4.0",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.2",
+    "ts-jest": "^22.0.4",
+    "tslint": "^5.9.1",
+    "tslint-react": "^3.5.1",
+    "typescript": "^2.7.2",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
+  },
+  "jest": {
+    "testRegex": "\\.spec\\.tsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "ts",
+      "tsx"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/test/polyfills.js"
+    ],
+    "transform": {
+      ".tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    }
+  }
+}
