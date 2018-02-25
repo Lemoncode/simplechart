@@ -25,7 +25,7 @@ module.exports = merge.strategy({
     inline: true,
     host: 'localhost',
     port: 8080,
-    stats: 'errors-only',
+    stats: 'minimal',
     hot: true,
   },
   plugins: [

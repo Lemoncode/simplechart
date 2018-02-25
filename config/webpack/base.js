@@ -86,7 +86,7 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       hash: true,
-      chunks: ['manifest', 'vendor', 'vendorStyles', 'appStyles', 'app'],
+      chunks: ['manifest', 'vendor', 'appStyles', 'app'],
       chunksSortMode: 'manual',
     }),
     new webpack.DefinePlugin({

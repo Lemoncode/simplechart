@@ -12,7 +12,8 @@
     "build:prod": "rimraf dist && cross-env REST_ENV=real NODE_ENV=production webpack -p --config ./config/webpack/prod.js",
     "lint": "tslint -c ./tslint.json --force src/**/*.ts src/**/*.tsx",
     "test": "jest --verbose",
-    "test:watch": "jest --watchAll --verbose -i"
+    "test:watch": "jest --watchAll --verbose -i",
+    "test:coverage": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -57,6 +58,7 @@
     "file-loader": "^1.1.6",
     "foreman": "^2.0.0",
     "html-webpack-plugin": "^2.30.1",
+    "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.4",
     "jest": "^22.3.0",
     "node-sass": "^4.7.2",
@@ -84,10 +86,18 @@
       "tsx"
     ],
     "setupFiles": [
-      "<rootDir>/config/test/polyfills.js"
+      "<rootDir>/config/test/polyfills.js",
+      "<rootDir>/config/test/setupTest.js"
     ],
     "transform": {
       ".tsx?": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.s?css$": "identity-obj-proxy"
+    },
+    "restoreMocks": true
   }
 }
