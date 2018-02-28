@@ -15,7 +15,7 @@ module.exports = {
       'react',
       'react-dom',
       'react-hot-loader',
-      'react-router-dom',
+      'react-router',
       'whatwg-fetch',
     ],
     appStyles: [
