@@ -24,6 +24,16 @@ npm start
 
 Finally, open your browser in http://localhost:8080 and you will see the project running.
 
+### Instructions to launch the back-end server
+
+In order to launch the fake back-end server, just run the following command:
+
+```bash
+npm run json-server
+```
+
+Once it starts, you can open your browser in http://localhost:3000 and get the available results.
+
 # About Lemoncode
 
 We are a team of long-term experienced freelance developers, established as a group in 2010.
