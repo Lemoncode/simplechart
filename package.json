@@ -13,7 +13,8 @@
     "lint": "tslint -c ./tslint.json --force src/**/*.ts src/**/*.tsx",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose -i",
-    "test:coverage": "jest --verbose --coverage"
+    "test:coverage": "jest --verbose --coverage",
+    "json-server": "json-server --watch ./fake-server/db.json --routes ./fake-server/routes.json"
   },
   "repository": {
     "type": "git",
