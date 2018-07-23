@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const helpers = require('../helpers');
 
 module.exports = merge(base, {
+  mode:'production',
   output: {
     path: helpers.resolveFromRootPath('dist'),
     filename: '[chunkhash].[name].js',

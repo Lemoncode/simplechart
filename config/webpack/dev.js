@@ -16,6 +16,7 @@ module.exports = merge.strategy({
     app: hotReloadingEntries,
     appStyles: hotReloadingEntries,
   },
+  mode:'development',
   output: {
     path: helpers.resolveFromRootPath('dist'),
     filename: '[name].js',

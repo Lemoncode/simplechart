@@ -11,11 +11,12 @@ module.exports = {
     ],
     vendor: [
       'babel-polyfill',
-      'material-ui',
+      '@material-ui/core',
       'react',
       'react-dom',
       'react-hot-loader',
       'react-router',
+      'react-router-dom',
       'whatwg-fetch',
     ],
     appStyles: [
@@ -24,6 +25,19 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendor: {
+          name: 'vendor',
+        },
+        manifest: {
+          name: 'manifest',
+        }
+      }
+    }
   },
   module: {
     rules: [
@@ -79,9 +93,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
-    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
