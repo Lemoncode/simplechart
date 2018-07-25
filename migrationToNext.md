@@ -23,3 +23,5 @@ changed all components to export default
 friendly urls
 
 enabled server friendly urls
+    npm install express --save
+    update package.json

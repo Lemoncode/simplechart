@@ -4,7 +4,7 @@
   "description": "Visualization of existing map based stats",
   "main": "index.js",
   "scripts": {
-    "dev": "next src",
+    "dev": "node server.js",
     "start": "nf start",
     "start:dev": "webpack-dev-server --config ./config/webpack/dev.js",
     "start:prod": "cross-env REST_ENV=real NODE_ENV=production webpack-dev-server --config ./config/webpack/prod.js",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@zeit/next-typescript": "^1.1.0",
     "babel-polyfill": "^6.26.0",
+    "express": "^4.16.3",
     "material-ui": "^0.20.0",
     "next": "^6.1.1",
     "react": "^16.2.0",
