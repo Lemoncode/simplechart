@@ -19,3 +19,7 @@ modify babel
 move index.html, index.tsx,app.tsx to pages directory
 
 changed all components to export default
+
+friendly urls
+
+enabled server friendly urls
