@@ -1,9 +1,13 @@
 import * as React from 'react';
-// import { Link } from 'react-router';
+import Link from 'next/link';
 
-export const PageBComponent: React.StatelessComponent = (props) => (
+const PageBComponent: React.StatelessComponent = () => (
   <div>
     <h1>Page B</h1>
-    {/* <Link to="/pageA">Page A</Link> */}
+    <Link href="/pageA/pageA">
+      <a>Page A</a>
+    </Link>
   </div>
 );
+
+export default PageBComponent;

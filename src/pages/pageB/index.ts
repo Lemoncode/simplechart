@@ -1,1 +1,1 @@
-export { PageBComponent } from './pageB';
+export * from './pageB';
