@@ -7,6 +7,7 @@ module.exports = {
   context: helpers.resolveFromRootPath('src'),
   entry: {
     app: [
+      'react-hot-loader/patch',
       './index.tsx',
     ],
     vendor: [
