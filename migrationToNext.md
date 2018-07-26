@@ -25,3 +25,22 @@ friendly urls
 enabled server friendly urls
     npm install express --save
     update package.json
+
+removed react-hot-loader
+
+npm uninstall webpack-merge
+npm uninstall webpack-dev-server
+npm uninstall extract-text-webpack-plugin
+npm uninstall @types/webpack-env
+npm uninstall awesome-typescript-loader
+npm uninstall css-loader
+npm uninstall file-loader
+npm uninstall html-webpack-plugin
+npm uninstall sass-loader
+npm uninstall style-loader
+npm uninstall url-loader
+npm uninstall 
+npm uninstall 
+npm uninstall 
+npm uninstall 
+npm uninstall 
