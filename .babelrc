@@ -4,6 +4,5 @@
     "@zeit/next-typescript/babel"
   ],
   "plugins": [
-    "react-hot-loader/babel"
   ]
 }
