@@ -39,8 +39,5 @@ npm uninstall html-webpack-plugin
 npm uninstall sass-loader
 npm uninstall style-loader
 npm uninstall url-loader
-npm uninstall 
-npm uninstall 
-npm uninstall 
-npm uninstall 
-npm uninstall 
+
+remove index.html
