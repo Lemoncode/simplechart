@@ -1,10 +1,9 @@
 import * as React from 'react';
 import PageAComponent from './pageA/pageA';
 
-const App: React.StatelessComponent = (props) => (
+const App: React.StatelessComponent = () => (
   <div>
-    {/* {props.children} */}
-    <PageAComponent/>
+    <PageAComponent />
   </div>
 );
 

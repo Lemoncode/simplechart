@@ -4,7 +4,10 @@
   "description": "Visualization of existing map based stats",
   "main": "index.js",
   "scripts": {
-    "dev": "node server.js",
+    "build": "next build src",
+    "start": "nf start",
+    "start:dev": "node server.js",
+    "start:prod": "cross-env NODE_ENV=production node server.js",
     "lint": "tslint -c ./tslint.json --force src/**/*.ts src/**/*.tsx",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose -i",
