@@ -10,16 +10,6 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/pageA', (req, res) => {
-      const actualPage = '/pageA/pageA';
-      app.render(req, res, actualPage);
-    });
-
-    server.get('/pageB', (req, res) => {
-      const actualPage = '/pageB/pageB';
-      app.render(req, res, actualPage);
-    });
-
     server.get('*', (req, res) => {
       return handle(req, res);
     });
