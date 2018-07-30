@@ -1,5 +1,3 @@
-
-
 describe ('dummyTest', () => {
 
     it ('always true', () => {

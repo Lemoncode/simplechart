@@ -1,13 +1,6 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "modules": false
-      }
-    ]
-  ],
-  "plugins": [
-    "react-hot-loader/babel"
+    "next/babel",
+    "@zeit/next-typescript/babel"
   ]
 }
