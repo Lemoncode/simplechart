@@ -65,6 +65,7 @@
   },
   "jest": {
     "testRegex": "\\.spec\\.tsx?$",
+    "testURL": "http://localhost/",
     "moduleFileExtensions": [
       "js",
       "jsx",
