@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PageAComponent from '../components/pageA';
 
-const Index = () =>
+const PageA = () =>
   <PageAComponent/>;
 
-export default Index;
+export default PageA;

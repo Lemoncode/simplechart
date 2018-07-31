@@ -4,4 +4,4 @@ import PageBComponent from '../components/pageB';
 const PageB = () =>
   <PageBComponent/>;
 
-export default  PageB;
+export default PageB;
