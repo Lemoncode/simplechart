@@ -1,7 +1,7 @@
 import * as React from 'react';
-import PageBComponent from '../components/spainMuniciaplitiesElectoralMap2016';
+import ElectoralMap from '../components/spainMunicipalitiesElectoralMap2016';
 
 const PageB = () =>
-  <PageBComponent />;
+  <ElectoralMap />;
 
 export default PageB;
