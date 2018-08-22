@@ -1,1 +1,0 @@
-export { PageBComponent } from './pageB';
