@@ -1,7 +1,7 @@
 import * as React from 'react';
-import PageAComponent from '../components/pageA';
+import Home from '../components/home';
 
 const PageA = () =>
-  <PageAComponent/>;
+  <Home />;
 
 export default PageA;

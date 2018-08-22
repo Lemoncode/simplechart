@@ -10,7 +10,7 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/pageA', (req, res) => {
+    server.get('/home', (req, res) => {
       const actualPage = '/';
       app.render(req, res, actualPage);
     });
