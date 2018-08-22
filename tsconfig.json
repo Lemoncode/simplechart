@@ -1,15 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "es6",
+    "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "node",
     "declaration": false,
     "noImplicitAny": false,
     "sourceMap": true,
     "jsx": "react",
     "noLib": false,
-    "allowJs": true,
-    "suppressImplicitAnyIndexErrors": true
+    "allowJs": true
   },
   "compileOnSave": true,
   "exclude": [
