@@ -108,5 +108,109 @@ describe('spainMunicipalitiesElectoralMap2016/mapper specs', () => {
       // Assert
       expect(result).toEqual([]);
     });
+
+    it('should return mapped array feeding geoEntities with values', () => {
+      // Arrange
+      const geoEntities: any = {
+        features: [
+          {
+            properties: {
+              NATCODE: '1',
+            },
+          },
+          {
+            properties: {
+              NATCODE: '2',
+            },
+          },
+          {
+            properties: {
+              NATCODE: '3',
+            },
+          },
+          {
+            properties: {
+              NATCODE: '4',
+            },
+          },
+        ],
+      };
+      const electoralVotes: vm.ElectoralVote[] = [
+        {
+          id: '1',
+          name: 'test name 1',
+          party: 'PP',
+          province: 'test province 1',
+          region: 'test region 1',
+        },
+        {
+          id: '2',
+          name: 'test name 2',
+          party: 'PSOE',
+          province: 'test province 2',
+          region: 'test region 2',
+        },
+        {
+          id: '3',
+          name: 'test name 3',
+          party: 'PODEMOS',
+          province: 'test province 3',
+          region: 'test region 3',
+        },
+        {
+          id: '4',
+          name: 'test name 4',
+          party: 'CS',
+          province: 'test province 4',
+          region: 'test region 4',
+        },
+      ];
+
+      // Act
+      const result = mapGeoAreaListModelToVM(geoEntities, electoralVotes);
+
+      // Assert
+
+      const expectedResult: GeoArea[] = [
+        {
+          id: '1',
+          geoEntity: geoEntities.features[0],
+          color: '#0cb2ff',
+          tooltipMessage: `
+      <h4>test name 1</h4>
+      <h3>PP</h3>
+    `,
+        },
+        {
+          id: '2',
+          geoEntity: geoEntities.features[1],
+          color: '#ff0000',
+          tooltipMessage: `
+      <h4>test name 2</h4>
+      <h3>PSOE</h3>
+    `,
+        },
+        {
+          id: '3',
+          geoEntity: geoEntities.features[2],
+          color: '#9a569a',
+          tooltipMessage: `
+      <h4>test name 3</h4>
+      <h3>PODEMOS</h3>
+    `,
+        },
+        {
+          id: '4',
+          geoEntity: geoEntities.features[3],
+          color: '#fca501',
+          tooltipMessage: `
+      <h4>test name 4</h4>
+      <h3>CS</h3>
+    `,
+        },
+      ];
+
+      expect(result).toEqual(expectedResult);
+    });
   });
 });
