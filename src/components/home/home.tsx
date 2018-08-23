@@ -5,7 +5,7 @@ const styles = require('./home.scss');
 
 export const Home: React.StatelessComponent = () => (
   <div className={styles.home}>
-    <Link href={routes.spainMuniciaplitiesElectoralMap2016}>
+    <Link href={routes.spainMunicipalitiesElectoralMap2016}>
       <a>Mapa electoral municipios España 2016</a>
     </Link>
   </div>
