@@ -1,0 +1,1 @@
+export { MapPageComponent } from './mapPage';
