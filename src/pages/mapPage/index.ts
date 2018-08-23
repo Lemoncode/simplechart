@@ -1,1 +1,1 @@
-export { MapPageComponent } from './mapPage';
+export { MapPageContainer } from './mapPageContainer';
