@@ -5,9 +5,7 @@ module.exports = withSass(withTypescript({
   cssModules: true,
   cssLoaderOptions: {
     importLoaders: 1,
+    camelCase: true,
     localIdentName: '[local]___[hash:base64:5]',
-  },
-  webpack(config, options) {
-    return config
   },
 }));
