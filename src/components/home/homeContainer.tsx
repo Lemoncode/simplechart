@@ -21,6 +21,7 @@ export class HomeContainer extends React.PureComponent<{}, State> {
         });
       });
   }
+
   render() {
     return (
       <Home

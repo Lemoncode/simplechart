@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { routes } from '../../common/constants/routes';
 import { Map } from './viewModel';
 const styles = require('./home.scss');
 
