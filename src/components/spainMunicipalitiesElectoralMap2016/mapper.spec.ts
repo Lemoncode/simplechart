@@ -4,7 +4,7 @@ import * as vm from './viewModel';
 import { FeatureCollection, GeometryObject } from 'geojson';
 import { GeoArea } from '../../common/components/map';
 
-describe('spainMunicipalitiesElectoralMap2016/mapper specs', () => {
+describe('spainMunicipalitiesElectoralMap2016/mappers specs', () => {
   describe('mapElectoralVotesModelToVM', () => {
     it('should return empty array feeding electoralVotes equals undefined', () => {
       // Arrange

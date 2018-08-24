@@ -11,7 +11,7 @@
         "2016",
         "municipios"
       ],
-      "data": "../../../map-data/spain/0001_spain2016MunicipalitiesElectoralVotes.json"
+      "url": "/mapa-electoral-municipios-espana-2016"
     }
   ]
 }

@@ -1,12 +1,24 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { routes } from '../../common/constants/routes';
+import { Map } from './viewModel';
 const styles = require('./home.scss');
 
-export const Home: React.StatelessComponent = () => (
+interface Props {
+  maps: Map[];
+}
+
+export const Home: React.StatelessComponent<Props> = (props) => (
   <div className={styles.home}>
-    <Link href={routes.spainMunicipalitiesElectoralMap2016}>
-      <a>Mapa electoral municipios España 2016</a>
-    </Link>
+    {
+      props.maps.map((map) => (
+        <Link
+          key={map.id}
+          href={map.url}
+        >
+          <a>{map.title}</a>
+        </Link>
+      ))
+    }
   </div>
 );
