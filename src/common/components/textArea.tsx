@@ -12,7 +12,7 @@ interface Props {
     value: string | number;
     placeholder?: string;
     error?: string;
-    onChange?: any;
+    onChange: ( name, value ) => void;
     disabled?: boolean;
     rows?: number;
 }

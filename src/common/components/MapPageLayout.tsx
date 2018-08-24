@@ -15,7 +15,9 @@ export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => 
     return (
         <div >
             <Map />
-            <Description description={props.description} onUpdateDescription={this.onUpdateDescription} />
+            <Description description={props.description} onUpdateDescription={props.onUpdateDescription} 
+            
+            />
             <Tags tags={props.tags} />
         </div>
     )
