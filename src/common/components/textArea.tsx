@@ -6,7 +6,7 @@ import { MuiThemeProvider } from 'material-ui/styles';
 interface Props {
     type: string;
     name: string;
-    label: string;
+    label?: string;
     labelClassName?: string;
     wrapperClassName?: string;
     value: string | number;
@@ -31,9 +31,10 @@ export const TextArea: React.StatelessComponent<Props> = (props) => {
                 <TextField
                     type={props.type}
                     name={props.name}
-                    hintText={props.placeholder}
+                    floatingLabelText={props.placeholder}
                     value={props.value}
                     onChange={onChange(props)}
+                    hintText={props.placeholder}
                     fullWidth={true}
                     disabled={props.disabled}
                     multiLine={true}

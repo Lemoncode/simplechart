@@ -1,7 +1,4 @@
 import * as React from 'react';
-
-
-import { Chip } from 'material-ui/Chip';
 import * as materialchip from 'material-ui-chip-input';
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -29,7 +26,8 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
             <MuiThemeProvider>
                 <ChipInput
                     fullWidth={true}
-                    label="Tags"
+                    floatinglabelText="Tags"
+                    placeholder="Tags"                  
                     value={props.value}
                     maxSearchResults={3}
                     dataSourceConfig={{text: props.displayMemberPath, value: props.valueMemberPath}}
@@ -45,8 +43,8 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
 };
 
 const handleAddChip = (props: Props) => (chip) => {
-    const newArray = [...props.value, ({id: -1, value: chip.value})];
-    props.onChange(props.name, newArray);
+   // const newArray = [...props.value, ({id: -1, value: chip.value})];
+    props.onChange(props.name, chip);
 };
 
 const handleDeleteChip = (props: Props) => (chip, index) => {

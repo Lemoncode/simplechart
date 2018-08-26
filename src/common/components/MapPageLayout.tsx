@@ -8,6 +8,7 @@ interface Props {
     description: string;
     tags: string[];
     onUpdateDescription: (field: string, value: string) => void;
+    onUpdateTags: (field: string, value: string[]) => void;
 }
 
 
@@ -17,7 +18,7 @@ export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => 
             <Map />
             <div className= "container-fluid row"> 
             <Description description={props.description} onUpdateDescription={props.onUpdateDescription}/>
-            <Tags tags={props.tags} updateField={props.onUpdateDescription} />
+            <Tags tags={props.tags} updateField={props.onUpdateTags} />
             </div> 
             
         </div>

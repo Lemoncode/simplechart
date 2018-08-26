@@ -5,7 +5,7 @@ import { ChipField } from './chipField';
 
 interface Props {
     tags: string[];
-    updateField(field: string, value: string): void;
+    updateField(field: string, value: string[]): void;
 
 }
 
@@ -22,6 +22,6 @@ export const Tags = (props: Props) => (
               dataSource={props.tags}
               allowDuplicates={false}
           />
-        <h1>{props.tags}</h1>
+     
     </div>
 );
