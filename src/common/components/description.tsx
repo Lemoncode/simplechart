@@ -12,19 +12,20 @@ const handleChange = (description, tags) => {
 }
 
 export const Description = (props: Props) => (
-  <div>
+ 
 
-    <div className="row form-group">
+    
       <TextArea
-        wrapperClassName="col-md-12"
+        wrapperClassName="col-md-6"
         type="text"
         name="description"
         label="Description"
         value={props.description}
         onChange={props.onUpdateDescription}
         rows={3}
-       // disabled={props.isReadOnly}
+      // disabled={props.isReadOnly}
       />
-    </div>
-  </div>
+    
+    
+ 
 );

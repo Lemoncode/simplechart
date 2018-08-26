@@ -6,19 +6,20 @@ import { Tags } from '../../common/components/Tags';
 
 interface Props {
     description: string;
-    tags: string;
+    tags: string[];
     onUpdateDescription: (field: string, value: string) => void;
 }
 
 
 export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => {
     return (
-        <div >
+        <div className="container-fluid jumbotron">
             <Map />
-            <Description description={props.description} onUpdateDescription={props.onUpdateDescription} 
+            <div className= "container-fluid row"> 
+            <Description description={props.description} onUpdateDescription={props.onUpdateDescription}/>
+            <Tags tags={props.tags} updateField={props.onUpdateDescription} />
+            </div> 
             
-            />
-            <Tags tags={props.tags} />
         </div>
     )
 }

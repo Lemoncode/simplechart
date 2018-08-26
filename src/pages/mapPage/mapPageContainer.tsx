@@ -11,7 +11,7 @@ interface Props {
 
 interface State {
   description: string;
-  tags: string;
+  tags: string[];
 }
 
 export class MapPageContainer extends React.PureComponent<Props, State>  {
@@ -20,7 +20,7 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
     super(props);
     this.state = {
       description: "",
-      tags: ""
+      tags: ["", ""]
     }
   }
 
@@ -35,16 +35,17 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
   private onUpdateDescription = (field, value) => {
     this.setState(updateDescription(field, value));
   }
- 
+
   public render() {
     return (
-      <div>
-        <h1>Map page</h1>
-        <MapPageLayout description={this.state.description} tags={this.state.tags} onUpdateDescription={this.onUpdateDescription} />
+
+      <div className="container-fluid row">
+        <MapPageLayout description={this.state.description} tags={this.state.tags} onUpdateDescription={this.onUpdateDescription}  />
+
         <Link to="/pageB">Page B</Link>
         <Link to="/pageA">Page A</Link>
-      </div>
 
+      </div>
     );
   }
 }
@@ -52,5 +53,5 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
 
 export const updateDescription = (field: string, value: any) => (state: State) => ({
   ...state,
-   [field]: value, 
+  [field]: value,
 });

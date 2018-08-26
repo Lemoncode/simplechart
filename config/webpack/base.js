@@ -8,6 +8,7 @@ module.exports = {
   entry: {
     app: [
       './index.tsx',
+      
     ],
     vendor: [
       'babel-polyfill',
@@ -20,10 +21,11 @@ module.exports = {
     ],
     appStyles: [
       './content/styles/styles.scss',
+      '../node_modules/bootstrap/dist/css/bootstrap.css',
     ],
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx', 'css'],
   },
   module: {
     rules: [
@@ -76,6 +78,16 @@ module.exports = {
         test: /\.(png|jpg|ico)?$/,
         loader: 'url-loader?limit=10000&mimetype=image/png',
       },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: {
+            loader: 'css-loader',
+          },
+        }),
+      }
     ]
   },
   plugins: [
