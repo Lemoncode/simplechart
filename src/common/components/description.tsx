@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Input } from './input';
 import { TextArea } from './textArea';
 
 interface Props {
@@ -13,11 +12,10 @@ export const Description = (props: Props) => (
     wrapperClassName="col-md-6"
     type="text"
     name="description"
-   placeholder="Description"
+    placeholder="Description"
     value={props.description}
     onChange={props.onUpdateDescription}
-   rows={2}
-  // disabled={props.isReadOnly}
+    rows={2}
   />
 
 );

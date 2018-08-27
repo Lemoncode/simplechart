@@ -43,7 +43,6 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
 };
 
 const handleAddChip = (props: Props) => (chip) => {
-   // const newArray = [...props.value, ({id: -1, value: chip.value})];
     props.onChange(props.name, chip);
 };
 

@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import { ValidationComponent } from './validation';
 import TextField from 'material-ui/TextField';
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -12,7 +11,7 @@ interface Props {
   value: string | number;
   placeholder?: string;
   error?: string;
-  errorKey?: string; // MultiLang support access by key
+  errorKey?: string; 
   onChange: any;
   disabled?: boolean;
 }
@@ -41,7 +40,6 @@ export class Input extends React.PureComponent<Props, {}> {
           refInput.selectionStart = refInput.selectionEnd = index;
         }
         catch (error) {
-          // NOTE: type number does not support selection
         }
       }
     }
@@ -81,5 +79,3 @@ export class Input extends React.PureComponent<Props, {}> {
     );
   }
 }
-//<ValidationComponent error={this.props.error}>
-//</ValidationComponent>

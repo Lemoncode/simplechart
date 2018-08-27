@@ -23,15 +23,7 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
       tags: []
     }
   }
-/* 
-  public handleChange(description, tags) {
-    this.setState({
-      ...this.state,
-      description: description,
-      tags: tags
-    });
-  } */
-
+  
   private onUpdateDescription = (field, value) => {
     this.setState(updateDescription(field, value));
   }
@@ -42,18 +34,17 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
 
   public render() {
     return (
-
       <div className="container-fluid row">
-        <MapPageLayout description={this.state.description} tags={this.state.tags} onUpdateDescription={this.onUpdateDescription} onUpdateTags={this.onUpdateTags} />
-
+        <MapPageLayout description={this.state.description}
+          tags={this.state.tags}
+          onUpdateDescription={this.onUpdateDescription}
+          onUpdateTags={this.onUpdateTags} />
         <Link to="/pageB">Page B</Link>
         <Link to="/pageA">Page A</Link>
-
       </div>
     );
   }
 }
-
 
 export const updateDescription = (field: string, value: any) => (state: State) => ({
   ...state,
@@ -61,10 +52,7 @@ export const updateDescription = (field: string, value: any) => (state: State) =
 
 });
 
-
 export const updateTags = (field: string, value: string) => (state: State) => ({
-  ...state, 
+  ...state,
   tags: [...state.tags, value]
 });
-
-

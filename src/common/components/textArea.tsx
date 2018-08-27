@@ -1,5 +1,4 @@
 import * as React from 'react';
-//import { ValidationComponent } from './validation';
 import TextField from 'material-ui/TextField';
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -17,13 +16,9 @@ interface Props {
     rows?: number;
 }
 
-// TODO: Add proper styling
-// TODO: Add unit tests support (similar to textinput)
-// TODO: Bug when editing and on focus? Fixed on text input
 export const TextArea: React.StatelessComponent<Props> = (props) => {
     return (
         <div className={props.wrapperClassName}>
-
             <label htmlFor={props.name} className={props.labelClassName}>
                 {props.label}
             </label>
@@ -49,4 +44,3 @@ export const TextArea: React.StatelessComponent<Props> = (props) => {
 const onChange = (props: Props) => (e) => {
     props.onChange(e.target.name, e.target.value);
 };
-//<ValidationComponent error={props.error}> </ValidationComponent>

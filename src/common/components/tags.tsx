@@ -1,12 +1,9 @@
 import * as React from 'react';
 import { ChipField } from './chipField';
 
-
-
 interface Props {
     tags: string[];
     updateField(field: string, value: string[]): void;
-
 }
 
 export const Tags = (props: Props) => (
@@ -22,6 +19,5 @@ export const Tags = (props: Props) => (
               dataSource={props.tags}
               allowDuplicates={false}
           />
-     
     </div>
 );
