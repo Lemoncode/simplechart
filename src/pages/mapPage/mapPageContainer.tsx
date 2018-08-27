@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router';
-import { MapPageLayout } from '../../common/components/MapPageLayout';
-import { Description } from '../../common/components/Description';
-import { Map } from '../../common/components/Map';
-import { Tags } from '../../common/components/Tags';
+import { MapPageLayout } from '../../common/components/mapPageLayout';
 
 interface Props {
 
@@ -32,13 +29,18 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
     this.setState(updateTags(field, value));
   }
 
+  private onDeleteTags = (field, value) => {
+    this.setState(onDeleteTags(field, value));
+  }
+
   public render() {
     return (
       <div className="container-fluid row">
         <MapPageLayout description={this.state.description}
           tags={this.state.tags}
           onUpdateDescription={this.onUpdateDescription}
-          onUpdateTags={this.onUpdateTags} />
+          onUpdateTags={this.onUpdateTags}
+          onDelete= {this.onDeleteTags} />
         <Link to="/pageB">Page B</Link>
         <Link to="/pageA">Page A</Link>
       </div>
@@ -55,4 +57,10 @@ export const updateDescription = (field: string, value: any) => (state: State) =
 export const updateTags = (field: string, value: string) => (state: State) => ({
   ...state,
   tags: [...state.tags, value]
+});
+
+
+export const onDeleteTags = (field: string, value: string[]) => (state: State) => ({
+  ...state,
+  tags: value
 });

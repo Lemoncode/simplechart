@@ -18,6 +18,7 @@ interface Props {
     valueMemberPath: string;
     allowDuplicates?: boolean;
     onlyLookUpValue?: boolean;
+    onDelete: (field: string, value: string[]) => void;
 }
 
 export const ChipField: React.StatelessComponent<Props> = (props) => {
@@ -46,10 +47,10 @@ const handleAddChip = (props: Props) => (chip) => {
     props.onChange(props.name, chip);
 };
 
-const handleDeleteChip = (props: Props) => (chip, index) => {
+ const handleDeleteChip = (props: Props) => (chip, index) => {
     const newArray = props.value.filter(findElement(chip));
-    props.onChange(props.name, newArray);
-};
+    props.onDelete(props.name, newArray);
+}; 
 
 const findElement = (chip) => (item) => {
     return item.id !== chip;

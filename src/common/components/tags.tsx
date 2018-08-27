@@ -4,6 +4,7 @@ import { ChipField } from './chipField';
 interface Props {
     tags: string[];
     updateField(field: string, value: string[]): void;
+    onDelete: (field: string, value: string[]) => void;
 }
 
 export const Tags = (props: Props) => (
@@ -18,6 +19,7 @@ export const Tags = (props: Props) => (
               onChange={props.updateField}
               dataSource={props.tags}
               allowDuplicates={false}
+              onDelete= {props.onDelete}
           />
     </div>
 );
