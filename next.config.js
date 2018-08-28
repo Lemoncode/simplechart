@@ -10,6 +10,15 @@ module.exports = withSass(withTypescript({
     localIdentName: '[local]___[hash:base64:5]',
   },
   webpack: (config) => {
+    const originalEntry = config.entry;
+    config.entry = () => originalEntry()
+      .then((entry) => {
+        return {
+          ...entry,
+          'appStyles': './content/styles/styles.scss',
+        };
+      });
+
     config.plugins.push(
       new webpack.EnvironmentPlugin(process.env)
     );
