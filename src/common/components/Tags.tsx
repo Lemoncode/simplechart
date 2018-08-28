@@ -12,7 +12,7 @@ export const Tags = (props: Props) => (
         <ChipField
               name="tags"
               label="Tags"
-              wrapperClassName="col-md-6 col-sm-6"
+              wrapperClassName="col-md-12"
               value={props.tags}
               valueMemberPath="id"
               displayMemberPath="value"

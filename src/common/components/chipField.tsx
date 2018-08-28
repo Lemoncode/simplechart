@@ -27,8 +27,7 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
             <MuiThemeProvider>
                 <ChipInput
                     fullWidth={true}
-                    floatinglabelText="Tags"
-                    placeholder="Tags"                  
+                    floatingLabelText="Tags"                          
                     value={props.value}
                     maxSearchResults={3}
                     dataSourceConfig={{text: props.displayMemberPath, value: props.valueMemberPath}}
@@ -36,7 +35,7 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
                     onRequestDelete={handleDeleteChip(props)}
                     allowDuplicates={props.allowDuplicates}
                     dataSource={props.dataSource}
-                    className = "col-md-12"
+                    className = "col-md-12 col-sm-12"
                 />
            </MuiThemeProvider>
         </div>

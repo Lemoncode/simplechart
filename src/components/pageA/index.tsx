@@ -7,6 +7,9 @@ const PageAComponent: React.StatelessComponent = () => (
     <Link as="pageB" href="/pageB">
       <a>Page B</a>
     </Link>
+    <Link as="mapPage" href="/mapPageContainer">
+      <a>Map Page</a>
+    </Link>
   </div>
 );
 

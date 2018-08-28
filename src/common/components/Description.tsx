@@ -9,7 +9,7 @@ interface Props {
 export const Description = (props: Props) => (
 
   <TextArea
-    wrapperClassName="col-md-6 col-sm-6"
+    wrapperClassName="col-md-6"
     type="text"
     name="description"
     placeholder="Description"

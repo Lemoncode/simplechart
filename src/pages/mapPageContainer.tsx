@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Link } from 'react-router';
-import { MapPageLayout } from '../../common/components/mapPageLayout';
+import Link from 'next/link';
+import { MapPageLayout } from '../components/mapPage/MapPageLayout';
+
 
 interface Props {
 
@@ -11,7 +12,7 @@ interface State {
   tags: string[];
 }
 
-export class MapPageContainer extends React.PureComponent<Props, State>  {
+export default class MapPageContainer extends React.PureComponent<Props, State>  {
 
   public constructor(props: Props) {
     super(props);
@@ -20,7 +21,7 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
       tags: []
     }
   }
-  
+
   private onUpdateDescription = (field, value) => {
     this.setState(updateDescription(field, value));
   }
@@ -40,9 +41,14 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
           tags={this.state.tags}
           onUpdateDescription={this.onUpdateDescription}
           onUpdateTags={this.onUpdateTags}
-          onDelete= {this.onDeleteTags} />
-        <Link to="/pageB">Page B</Link>
-        <Link to="/pageA">Page A</Link>
+          onDelete={this.onDeleteTags} />
+
+        <Link as="pageA" href="/pageA">
+          <a>Page A</a>
+        </Link>
+        <Link as="pageB" href="/pageB">
+          <a>Page B</a>
+        </Link>
       </div>
     );
   }
