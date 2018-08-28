@@ -12,12 +12,10 @@ module.exports = withSass(withTypescript({
   webpack: (config) => {
     const originalEntry = config.entry;
     config.entry = () => originalEntry()
-      .then((entry) => {
-        return {
-          ...entry,
-          'appStyles': './content/styles/styles.scss',
-        };
-      });
+      .then((entry) => ({
+        ...entry,
+        'appStyles': './content/styles/styles.scss',
+      }));
 
     config.plugins.push(
       new webpack.EnvironmentPlugin(process.env)
