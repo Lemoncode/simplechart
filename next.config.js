@@ -8,6 +8,7 @@ module.exports = withSass(withTypescript({
     importLoaders: 1,
     camelCase: true,
     localIdentName: '[local]___[hash:base64:5]',
+
   },
   webpack: (config) => {
     const originalEntry = config.entry;

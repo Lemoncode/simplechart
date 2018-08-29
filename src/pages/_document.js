@@ -1,9 +1,11 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Head, Main, NextScript } from "next/document";
+import {LoadingSpinnerComponent } from "../common/spinner";
 
 export default class MyDocument extends Document {
   render() {
     return (
       <html>
+        <LoadingSpinnerComponent />
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
         </Head>
@@ -12,6 +14,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }

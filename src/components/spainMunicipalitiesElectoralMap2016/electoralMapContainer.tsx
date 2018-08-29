@@ -4,6 +4,8 @@ import { ElectoralVote } from './viewModel';
 import { getGeoEntities, geoAreaTypes, getMesh } from '../../common/geo/spain';
 import { ElectoralMapComponent } from './electoralMap';
 import { mapElectoralVotesModelToVM } from './mapper';
+import { trackPromise } from 'react-promise-tracker';
+import { LoadingSpinnerComponent } from '../../common/spinner';
 
 interface State {
   electoralVotes: ElectoralVote[];
@@ -19,7 +21,9 @@ export class ElectoralMapContainer extends React.PureComponent<{}, State> {
   };
 
   componentDidMount() {
-    this.loadMapData();
+    trackPromise(
+      this.loadMapData(),
+    );
   }
 
   loadMapData = async () => {
@@ -34,11 +38,15 @@ export class ElectoralMapContainer extends React.PureComponent<{}, State> {
 
   render() {
     return (
-      <ElectoralMapComponent
-        electoralVoteEntities={this.state.electoralVotes}
-        geoEntities={this.state.geoEntities}
-        mesh={this.state.mesh}
-      />
+      <>
+        <h1>hola!</h1>
+        <LoadingSpinnerComponent />
+        <ElectoralMapComponent
+          electoralVoteEntities={this.state.electoralVotes}
+          geoEntities={this.state.geoEntities}
+          mesh={this.state.mesh}
+        />
+      </>
     );
   }
 }
