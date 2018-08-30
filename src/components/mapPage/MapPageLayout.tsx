@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Description } from '../../common/components/Description';
-import { Map } from '../../common/components/Map';
+
 import { Tags } from '../../common/components/Tags';
+import { MapComponent } from "../../common/components/map";
 <link rel="stylesheet" href="/static/css/bootstrap.min.css" /> 
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => {
     return (
         <div className="container-fluid jumbotron">
-            <Map />
+            <MapComponent/>
             <div className="container-fluid row">
                 <div className="col-md-6 col-sm-6 ">
                     <Description description={props.description} onUpdateDescription={props.onUpdateDescription} />
