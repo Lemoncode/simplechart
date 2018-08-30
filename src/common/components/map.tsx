@@ -10,19 +10,3 @@ export const Map = (props: Props) => (
   </div>
  
 );
-
-/*export  class Map extends Document {
-  render() {
-    return (
-      <html>
-        <Head>
-          <link rel="stylesheet" href="/_next/static/style.css" />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </html>
-    )
-  }
-}*/

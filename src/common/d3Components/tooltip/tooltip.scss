@@ -1,0 +1,13 @@
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  color: white;
+  background-color: #3a3a3a;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  opacity: 1;
+
+  &.hidden {
+    opacity: 0;
+  }
+}

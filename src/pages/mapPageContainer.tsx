@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Link from 'next/link';
+
 import { MapPageLayout } from '../components/mapPage/MapPageLayout';
 
 
@@ -43,12 +43,7 @@ export default class MapPageContainer extends React.PureComponent<Props, State> 
           onUpdateTags={this.onUpdateTags}
           onDelete={this.onDeleteTags} />
 
-        <Link as="pageA" href="/pageA">
-          <a>Page A</a>
-        </Link>
-        <Link as="pageB" href="/pageB">
-          <a>Page B</a>
-        </Link>
+       
       </div>
     );
   }
