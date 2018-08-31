@@ -1,4 +1,6 @@
+const baseUrl = '/maps';
+
 export const urls = {
-  fetchMaps: '/maps',
-  fetchMapById: '/maps',
+  fetchMaps: baseUrl,
+  fetchMapById: baseUrl,
 };
