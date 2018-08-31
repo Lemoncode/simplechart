@@ -4,14 +4,13 @@ import { routes } from '../../../common/constants/routes';
 export const maps: Map[] = [
   {
     id: 1,
-    title: 'Resultado Elecciones Generales 2016 por municipios',
+    title: 'Test title',
     type: 1,
-    description: 'Resultados de las Elecciones Generales de 2016, por municipios',
+    description: 'Test description',
     tags: [
-      'elecciones',
-      'nacionales',
-      '2016',
-      'municipios',
+      'tag1',
+      'tag2',
+      'tag3',
     ],
     url: routes.spainMunicipalitiesElectoralMap2016,
   },

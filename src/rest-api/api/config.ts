@@ -1,3 +1,3 @@
 export const config = {
-  useRealAPI: (process.env.REST_ENV === 'api'),
+  useRealAPI: (process.env.REST_ENV !== 'mock'),
 };
