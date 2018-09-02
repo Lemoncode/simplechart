@@ -13,3 +13,15 @@ export const createEmptyElectoralVote = (): ElectoralVote => ({
   province: '',
   party: '',
 });
+
+export interface MapInfo {
+  id: number;
+  title: string;
+  description: string;
+}
+
+export const createEmptyMapInfo = (): MapInfo => ({
+  id: 0,
+  title: '',
+  description: '',
+});

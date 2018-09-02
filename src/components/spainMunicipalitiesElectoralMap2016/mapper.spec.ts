@@ -1,4 +1,4 @@
-import { mapElectoralVotesModelToVM, mapGeoAreaListModelToVM } from './mapper';
+import { mapElectoralVotesModelToVM, mapGeoAreaListModelToVM, mapMapInfoModelToVM } from './mapper';
 import * as model from '../../rest-api/model';
 import * as vm from './viewModel';
 import { FeatureCollection, GeometryObject } from 'geojson';
@@ -209,6 +209,66 @@ describe('spainMunicipalitiesElectoralMap2016/mappers specs', () => {
     `,
         },
       ];
+
+      expect(result).toEqual(expectedResult);
+    });
+  });
+
+  describe('mapMapInfoModelToVM', () => {
+    it('should return mapInfo object with default values when feeding map equals undefined', () => {
+      // Arrange
+      const map: model.Map = undefined;
+
+      // Act
+      const result = mapMapInfoModelToVM(map);
+
+      // Assert
+      const expectedResult: vm.MapInfo = {
+        id: 0,
+        title: '',
+        description: '',
+      };
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should return mapInfo object with default values when feeding map equals null', () => {
+      // Arrange
+      const map: model.Map = null;
+
+      // Act
+      const result = mapMapInfoModelToVM(map);
+
+      // Assert
+      const expectedResult: vm.MapInfo = {
+        id: 0,
+        title: '',
+        description: '',
+      };
+
+      expect(result).toEqual(expectedResult);
+    });
+
+    it('should return mapInfo object with mapped values when feeding map with values', () => {
+      // Arrange
+      const map: model.Map = {
+        id: 1,
+        title: 'test title',
+        description: 'test description',
+        type: 2,
+        tags: ['test tag'],
+        url: 'test url',
+      };
+
+      // Act
+      const result = mapMapInfoModelToVM(map);
+
+      // Assert
+      const expectedResult: vm.MapInfo = {
+        id: 1,
+        title: 'test title',
+        description: 'test description',
+      };
 
       expect(result).toEqual(expectedResult);
     });
