@@ -9,13 +9,15 @@ interface MyProps {
 
 const InnerLoadingSpinerComponent: React.StatelessComponent<MyProps> = (props: MyProps) => {
    if (props.trackedPromiseInProgress === true) {
+     console.log('loading')
     return (
       <div className="loading">
+        <h1>Spinner</h1>
         <BeatLoader
                   loading={props.trackedPromiseInProgress}
         />
       </div>
     );
-  } else { return null; }
+  } else { console.log('not loading'); return null; }
 };
 export const LoadingSpinnerComponent = promiseTrackerHoc(InnerLoadingSpinerComponent);
