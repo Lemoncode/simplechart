@@ -65,3 +65,13 @@ const getTooltipMessage = (electoralVote: vm.ElectoralVote) => (
     ` :
     '<h4>Sin Datos</h4>'
 );
+
+export const mapMapInfoModelToVM = (map: model.Map): vm.MapInfo => (
+  Boolean(map) ?
+    {
+      id: map.id,
+      title: map.title,
+      description: map.description,
+    } :
+    vm.createEmptyMapInfo()
+);

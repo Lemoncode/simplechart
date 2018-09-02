@@ -1,7 +1,7 @@
+import fetch from 'isomorphic-unfetch';
 import { stringify } from 'qs';
 import { responseHandler } from './responseHandler';
 import { defaultOptions } from './defaultOptions';
-import { headers } from './constants';
 
 export const createRequest = (url: string, options: RequestInit, params?): Promise<any> => (
   fetch(buildURL(url, params), {
