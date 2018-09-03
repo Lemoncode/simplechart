@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "next build src",
-    "start": "nf start",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev": "node server.js",
     "start:prod": "cross-env NODE_ENV=production node server.js",
     "lint": "tslint -c ./tslint.json --force src/**/*.ts src/**/*.tsx",
@@ -63,7 +63,6 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.1",
-    "foreman": "^3.0.1",
     "identity-obj-proxy": "^3.0.0",
     "if-env": "^1.0.4",
     "jest": "^22.4.2",
