@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/Lemoncode/simplechart#readme",
   "dependencies": {
+    "@types/nprogress": "0.0.29",
     "@zeit/next-sass": "^0.2.0",
     "@zeit/next-typescript": "^1.1.0",
     "babel-polyfill": "^6.26.0",
@@ -34,6 +35,7 @@
     "isomorphic-unfetch": "^2.1.1",
     "material-ui": "^0.20.0",
     "next": "^6.1.1",
+    "nprogress": "^0.2.0",
     "qs": "^6.5.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",

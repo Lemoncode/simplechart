@@ -16,6 +16,7 @@ module.exports = withSass(withTypescript({
       .then((entry) => ({
         ...entry,
         'appStyles': './content/styles/styles.scss',
+        'nprogress': '../node_modules/nprogress.css',
       }));
 
     config.plugins.push(

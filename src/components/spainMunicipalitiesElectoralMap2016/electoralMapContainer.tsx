@@ -7,7 +7,10 @@ import { trackPromise } from 'react-promise-tracker';
 import { LoadingSpinnerComponent } from '../../common/spinner';
 import { mapElectoralVotesModelToVM, mapMapInfoModelToVM } from './mapper';
 import { mapAPI } from '../../rest-api/api/map';
-import Router from 'next/router'
+import {setupPageSpinner} from '../../common/spinner/pageSpinner';
+import Link from 'next/link';
+
+setupPageSpinner();
 
 const mapId = 1;
 
@@ -76,19 +79,4 @@ export class ElectoralMapContainer extends React.PureComponent<Props, State> {
   }
 }
 
-let inProgressResolve = null;
 
-Router.onRouteChangeStart = () => {
-  const promise = new Promise((resolve, reject) => {
-      inProgressResolve = resolve;
-  });
-
-  (promise);
-}
-
-Router.onRouteChangeComplete = () => {
-  inProgressResolve({success: true});
-}
-Router.onRouteChangeError = () => {
-  inProgressResolve({success: false});
-}

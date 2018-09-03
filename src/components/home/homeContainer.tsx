@@ -4,6 +4,9 @@ import { Home } from './home';
 import { Map } from './viewModel';
 import { mapAPI } from '../../rest-api/api/map';
 import { mapMapListModelToVM } from './mappers';
+import {setupPageSpinner} from '../../common/spinner/pageSpinner';
+
+setupPageSpinner();
 
 interface Props {
   maps: Map[];
@@ -21,3 +24,4 @@ HomeContainer.getInitialProps = async () => {
     maps: mapMapListModelToVM(maps),
   };
 };
+

@@ -4,6 +4,7 @@ import { MapComponent } from '../../common/components/map';
 import { mapGeoAreaListModelToVM } from './mapper';
 import { getProjection } from '../../common/geo/spain';
 import { ElectoralVote, MapInfo } from './viewModel';
+import Link from 'next/link';
 const styles = require('./electoralMap.scss');
 
 interface Props {
@@ -15,6 +16,12 @@ interface Props {
 
 export const ElectoralMapComponent: React.StatelessComponent<Props> = (props) => (
   <div className={styles.electoralMap}>
+        <Link
+          href='/'
+        >
+          <a>Home</a>
+        </Link>
+
     <div className={styles.header}>
       <h1>{props.mapInfo.title}</h1>
       <p>{props.mapInfo.description}</p>
