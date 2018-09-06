@@ -3,6 +3,7 @@ import { Description } from '../../common/components/Description';
 
 import { Tags } from '../../common/components/Tags';
 import { MapComponent } from "../../common/components/map";
+import { MuiThemeProvider } from "material-ui/styles";
 <link rel="stylesheet" href="/static/css/bootstrap.min.css" /> 
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
 export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => {
     return (
         <div className="container-fluid jumbotron">
+        
             <MapComponent/>
             <div className="container-fluid row">
                 <div className="col-md-6 col-sm-6 ">
@@ -26,6 +28,7 @@ export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => 
                     <Tags tags={props.tags} updateField={props.onUpdateTags} onDelete={props.onDelete} />
                 </div>
             </div>
+            
         </div>
     )
 }

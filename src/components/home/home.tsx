@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { Map } from './viewModel';
+import MapPageContainer from '../mapPage';
 const styles = require('./home.scss');
 
 interface Props {
@@ -19,5 +20,6 @@ export const Home: React.StatelessComponent<Props> = (props) => (
         </Link>
       ))
     }
+   
   </div>
 );
