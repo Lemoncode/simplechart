@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { MapPageLayout } from '../components/mapPage/MapPageLayout';
+import { MapPageLayout } from './MapPageLayout';
 
 
 interface Props {
@@ -12,7 +12,7 @@ interface State {
   tags: string[];
 }
 
-export default class MapPageContainer extends React.PureComponent<Props, State>  {
+export  class MapPageContainer extends React.PureComponent<Props, State>  {
 
   public constructor(props: Props) {
     super(props);
