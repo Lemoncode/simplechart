@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { ChipField } from './chipField';
+import { Tag } from '../../components/mapPage/viewModel';
+
 
 interface Props {
-    tags: string[];
-    updateField(field: string, value: string[]): void;
-    onDelete: (field: string, value: string[]) => void;
+    tags: Tag[];
+    updateField(field: string, value: Tag[]): void;
+    onDelete: (field: string, value: Tag[]) => void;
 }
 
 export const Tags = (props: Props) => (

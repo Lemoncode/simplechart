@@ -1,16 +1,14 @@
 import * as React from 'react';
-import * as materialchip from 'material-ui-chip-input';
-import { MuiThemeProvider } from 'material-ui/styles';
-
-const ChipInput = materialchip.default;
+import { WithContext as ReactTags } from 'react-tag-input';
+import { Tag } from './map';
 
 interface Props {
     name: string;
     label: string;
     labelClassName?: string;
     wrapperClassName?: string;
-    value: string[] ;
-    dataSource?: string[];
+    value: Tag[];
+    dataSource?: Tag[];
     error?: string;
     onChange?: any;
     disabled?: boolean;
@@ -18,26 +16,29 @@ interface Props {
     valueMemberPath: string;
     allowDuplicates?: boolean;
     onlyLookUpValue?: boolean;
-    onDelete: (field: string, value: string[]) => void;
+    onDelete: (field: string, value: Tag[]) => void;
 }
 
 export const ChipField: React.StatelessComponent<Props> = (props) => {
     return (
         <div className={props.wrapperClassName}>
-            <MuiThemeProvider>
-                <ChipInput
-                    fullWidth={true}
-                    floatingLabelText="Tags"                          
-                    value={props.value}
-                    maxSearchResults={3}
-                    dataSourceConfig={{text: props.displayMemberPath, value: props.valueMemberPath}}
-                    onRequestAdd={handleAddChip(props)}
-                    onRequestDelete={handleDeleteChip(props)}
-                    allowDuplicates={props.allowDuplicates}
-                    dataSource={props.dataSource}
-                    className = "col-md-12 col-sm-12"
-                />
-           </MuiThemeProvider>
+
+            <ReactTags tags={props.value}
+                label={props.value}
+                handleDelete={handleDeleteChip(props, props.value)}
+                handleAddition={handleAddChip(props)}
+                classNames={{
+                    tags: 'tagsClass',
+                    tagInput: 'tagInputClass',
+                    tagInputField: 'tagInputFieldClass',
+                    selected: 'selectedClass',
+                    tag: 'tagClass',
+                    remove: 'removeClass',
+                    suggestions: 'suggestionsClass',
+                    activeSuggestion: 'activeSuggestionClass'
+                }}
+            />
+
         </div>
     );
 };
@@ -46,11 +47,11 @@ const handleAddChip = (props: Props) => (chip) => {
     props.onChange(props.name, chip);
 };
 
- const handleDeleteChip = (props: Props) => (chip, index) => {
-    const newArray = props.value.filter(findElement(chip));
+const handleDeleteChip = (props: Props, tags: Tag[]) => (i) => {
+    const newArray = tags.filter((tag, index) => index !== i);
     props.onDelete(props.name, newArray);
-}; 
+}
 
-const findElement = (chip) => (item) => {
-    return item.id !== chip;
+const findElement = (i) => (props) => {
+    return props.value !== props.value[i];
 };

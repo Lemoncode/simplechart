@@ -1,17 +1,14 @@
 import * as React from "react";
 import { Description } from '../../common/components/Description';
-
 import { Tags } from '../../common/components/Tags';
-import { MapComponent } from "../../common/components/map";
-import { MuiThemeProvider } from "material-ui/styles";
-<link rel="stylesheet" href="/static/css/bootstrap.min.css" /> 
+import { MapComponent, Tag } from "../../common/components/map";
 
 interface Props {
     description: string;
-    tags: string[];
+    tags: Tag[];
     onUpdateDescription: (field: string, value: string) => void;
-    onUpdateTags: (field: string, value: string[]) => void;
-    onDelete: (field: string, value: string[]) => void;
+    onUpdateTags: (field: string, value: Tag[]) => void;
+    onDelete: (field: string, value: Tag[]) => void;
 }
 
 export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => {

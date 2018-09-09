@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import { MapPageLayout } from './MapPageLayout';
+import { Tag } from '../../common/components/map';
 
 
 interface Props {
@@ -9,16 +10,19 @@ interface Props {
 
 interface State {
   description: string;
-  tags: string[];
+  tags: Tag[];
 }
 
-export  class MapPageContainer extends React.PureComponent<Props, State>  {
+export class MapPageContainer extends React.PureComponent<Props, State>  {
 
   public constructor(props: Props) {
     super(props);
     this.state = {
       description: "",
-      tags: []
+      tags: [
+        { id: "Thailand", text: "Thailand" },
+        { id: "India", text: "India" }
+      ]
     }
   }
 
@@ -31,7 +35,7 @@ export  class MapPageContainer extends React.PureComponent<Props, State>  {
   }
 
   private onDeleteTags = (field, value) => {
-    this.setState(onDeleteTags(field, value));
+    this.setState(onDeleteTags( field, value));
   }
 
   public render() {
@@ -43,7 +47,7 @@ export  class MapPageContainer extends React.PureComponent<Props, State>  {
           onUpdateTags={this.onUpdateTags}
           onDelete={this.onDeleteTags} />
 
-       
+
       </div>
     );
   }
@@ -58,10 +62,13 @@ export const updateDescription = (field: string, value: any) => (state: State) =
 export const updateTags = (field: string, value: string) => (state: State) => ({
   ...state,
   tags: [...state.tags, value]
+  
 });
 
 
-export const onDeleteTags = (field: string, value: string[]) => (state: State) => ({
+export const onDeleteTags = (field: string, value: Tag[]) => (state: State) => ({
   ...state,
   tags: value
 });
+
+
