@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { WithContext as ReactTags } from 'react-tag-input';
-import { Tag } from './map';
+import { Tag } from '../../components/mapPage/viewModel';
+const styles = require('./reactTagsAndText.scss');
 
 interface Props {
     name: string;
@@ -28,14 +29,14 @@ export const ChipField: React.StatelessComponent<Props> = (props) => {
                 handleDelete={handleDeleteChip(props, props.value)}
                 handleAddition={handleAddChip(props)}
                 classNames={{
-                    tags: 'tagsClass',
-                    tagInput: 'tagInputClass',
-                    tagInputField: 'tagInputFieldClass',
-                    selected: 'selectedClass',
-                    tag: 'tagClass',
-                    remove: 'removeClass',
-                    suggestions: 'suggestionsClass',
-                    activeSuggestion: 'activeSuggestionClass'
+                    tags: styles.ReactTags__tags,
+                    tagInput: styles.ReactTags__tagInput,
+                    tagInputField: styles.ReactTags__tagInputField,
+                    selected: styles.ReactTags__selected,
+                    tag:`${styles.ReactTags__selected}  ${styles.ReactTags__tag}`,
+                    remove: `${styles.ReactTags__selected} ${styles.ReactTags__remove}`,
+                    suggestions: styles.ReactTags__suggestions,
+                    activeSuggestion: styles.ReactTags__activeSuggestion
                 }}
             />
 
@@ -51,7 +52,3 @@ const handleDeleteChip = (props: Props, tags: Tag[]) => (i) => {
     const newArray = tags.filter((tag, index) => index !== i);
     props.onDelete(props.name, newArray);
 }
-
-const findElement = (i) => (props) => {
-    return props.value !== props.value[i];
-};

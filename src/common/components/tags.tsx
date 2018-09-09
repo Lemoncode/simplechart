@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ChipField } from './chipField';
 import { Tag } from '../../components/mapPage/viewModel';
-
+const styles = require('./reactTagsAndText.scss');
 
 interface Props {
     tags: Tag[];
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Tags = (props: Props) => (
-    <div>
+    <div  className={styles.container}>
         <ChipField
               name="tags"
               label="Tags"

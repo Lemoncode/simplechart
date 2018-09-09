@@ -2,6 +2,7 @@ import * as React from 'react';
 import Link from 'next/link';
 import { Map } from './viewModel';
 import MapPageContainer from '../mapPage';
+import { routes } from '../../common/constants/routes';
 const styles = require('./home.scss');
 
 interface Props {
@@ -14,7 +15,7 @@ export const Home: React.StatelessComponent<Props> = (props) => (
       props.maps.map((map) => (
         <Link
           key={map.id}
-          href={map.url}
+          href={routes.mapPageLayout/* map.url */}
         >
           <a>{map.title}</a>
         </Link>

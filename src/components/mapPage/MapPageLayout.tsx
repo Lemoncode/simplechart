@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Description } from '../../common/components/Description';
 import { Tags } from '../../common/components/Tags';
-import { MapComponent, Tag } from "../../common/components/map";
+import ElectoralMapContainer from "../spainMunicipalitiesElectoralMap2016";
+import { Tag } from "./viewModel";
 
 interface Props {
     description: string;
@@ -13,19 +14,18 @@ interface Props {
 
 export const MapPageLayout: React.StatelessComponent<Props> = (props: Props) => {
     return (
-        <div className="container-fluid jumbotron">
-        
-            <MapComponent/>
-            <div className="container-fluid row">
-                <div className="col-md-6 col-sm-6 ">
-                    <Description description={props.description} onUpdateDescription={props.onUpdateDescription} />
-                </div  >
+        <div >
 
-                <div className="col-md-6 col-sm-6 ">
-                    <Tags tags={props.tags} updateField={props.onUpdateTags} onDelete={props.onDelete} />
-                </div>
-            </div>
-            
+            <ElectoralMapContainer />
+
+
+            <Description description={props.description} onUpdateDescription={props.onUpdateDescription} />
+
+
+            <Tags tags={props.tags} updateField={props.onUpdateTags} onDelete={props.onDelete} />
+
+
+
         </div>
     )
 }

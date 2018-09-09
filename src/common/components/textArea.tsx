@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { TextField } from '@material-ui/core';
-
+const styles = require('./reactTagsAndText.scss');
 
 interface Props {
     type: string;
@@ -11,33 +11,30 @@ interface Props {
     value: string | number;
     placeholder?: string;
     error?: string;
-    onChange: ( name, value ) => void;
+    onChange: (name, value) => void;
     disabled?: boolean;
     rows?: number;
 }
 
 export const TextArea: React.StatelessComponent<Props> = (props) => {
     return (
-        <div className={props.wrapperClassName}>
-            <label htmlFor={props.name} className={props.labelClassName}>
-                {props.label}
-            </label>
-          
-                <TextField
-                    type={props.type}
-                    name={props.name}
-             
-                    value={props.value}
-                    onChange={onChange(props)}
-              
-                    fullWidth={true}
-                    disabled={props.disabled}
-                  
-                    rows={props.rows}
-                    rowsMax={props.rows}
-                />
 
+        <div className={styles.container}>
+
+            <TextField
+                type={props.type}
+                name={props.name}
+                label={props.label}
+                value={props.value}
+                onChange={onChange(props)}
+                multiline
+                rowsMax={props.rows}
+                className={styles.textField}
+                disabled={props.disabled}
+
+            />
         </div>
+
     );
 };
 

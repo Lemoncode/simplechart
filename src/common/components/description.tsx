@@ -8,11 +8,11 @@ interface Props {
 
 export const Description = (props: Props) => (
 
-  <TextArea
-    wrapperClassName="col-md-6 col-sm-6"
+  <TextArea   
     type="text"
     name="description"
     placeholder="Description"
+    label= 'Description'
     value={props.description}
     onChange={props.onUpdateDescription}
     rows={2}

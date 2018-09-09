@@ -1,8 +1,6 @@
 import * as React from 'react';
-
 import { MapPageLayout } from './MapPageLayout';
-import { Tag } from '../../common/components/map';
-
+import { Tag } from './viewModel';
 
 interface Props {
 
@@ -20,8 +18,8 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
     this.state = {
       description: "",
       tags: [
-        { id: "Thailand", text: "Thailand" },
-        { id: "India", text: "India" }
+        { id: "1", text: "Elecciones" },
+        { id: "2", text: "Votos" }
       ]
     }
   }
