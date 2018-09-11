@@ -56,14 +56,12 @@ export class ElectoralMapContainer extends React.PureComponent<Props, State> {
 
   render() {
     return (
-      <>
       <ElectoralMapComponent
         mapInfo={this.props.mapInfo}
         electoralVoteEntities={this.state.electoralVotes}
         geoEntities={this.state.geoEntities}
         mesh={this.state.mesh}
       />
-      </>
     );
   }
 }
