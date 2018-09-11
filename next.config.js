@@ -1,6 +1,6 @@
-const withTypescript = require("@zeit/next-typescript");
-const withSass = require("@zeit/next-sass");
-const webpack = require("webpack");
+const withTypescript = require('@zeit/next-typescript');
+const withSass = require('@zeit/next-sass');
+const webpack = require('webpack');
 
 module.exports = withSass(withTypescript({
   cssLoaderOptions: {
@@ -14,7 +14,7 @@ module.exports = withSass(withTypescript({
     config.entry = () => originalEntry()
       .then((entry) => ({
         ...entry,
-        "appStyles": "./content/styles/styles.scss",
+        'appStyles': './content/styles/styles.scss',
       }));
 
     config.plugins.push(

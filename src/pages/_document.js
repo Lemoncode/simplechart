@@ -1,5 +1,4 @@
-import Document, { Head, Main, NextScript } from "next/document";
-import {LoadingSpinnerComponent } from "../common/spinner";
+import Document, { Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
   render() {
