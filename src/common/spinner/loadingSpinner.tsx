@@ -1,6 +1,7 @@
 import * as React from 'react';
+import './loadingSpinner.scss';
 import { promiseTrackerHoc } from 'react-promise-tracker';
-import {RingLoader} from 'react-spinners';
+import {BeatLoader} from 'react-spinners';
 
 interface MyProps {
   trackedPromiseInProgress?: boolean;
@@ -8,9 +9,15 @@ interface MyProps {
 
 const InnerLoadingSpinerComponent: React.StatelessComponent<MyProps> = (props: MyProps) => {
    if (props.trackedPromiseInProgress === true) {
-     return (
-       <RingLoader color="#00d8ff" />
+     console.log('loading')
+    return (
+      <div className="loading">
+        <h1>Spinner</h1>
+        <BeatLoader
+                  loading={props.trackedPromiseInProgress}
+        />
+      </div>
     );
-  } else {return null; }
+  } else { console.log('not loading'); return null; }
 };
 export const LoadingSpinnerComponent = promiseTrackerHoc(InnerLoadingSpinerComponent);
