@@ -11,9 +11,9 @@ interface Props {
 export const Home: React.StatelessComponent<Props> = (props) => {
   return(
   <>
-      <div className={styles.loading}>
+    <div className={styles.loading}>
       <LoadingSpinnerComponent/>
-      </div>
+    </div>
     <div className={styles.home}>
       {
         props.maps.map((map) => (
