@@ -37,6 +37,8 @@
     "qs": "^6.5.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-promise-tracker": "^1.1.0",
+    "react-spinners": "^0.4.5",
     "topojson-client": "^3.0.0",
     "topojson-simplify": "^3.0.2",
     "whatwg-fetch": "^2.0.3"

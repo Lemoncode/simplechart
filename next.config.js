@@ -3,12 +3,12 @@ const withSass = require('@zeit/next-sass');
 const webpack = require('webpack');
 
 module.exports = withSass(withTypescript({
-  cssModules: true,
   cssLoaderOptions: {
-    importLoaders: 1,
     camelCase: true,
-    localIdentName: '[local]___[hash:base64:5]',
+    importLoaders: 1,
+    localIdentName: "[local]___[hash:base64:5]",
   },
+  cssModules: true,
   webpack: (config) => {
     const originalEntry = config.entry;
     config.entry = () => originalEntry()
@@ -18,7 +18,7 @@ module.exports = withSass(withTypescript({
       }));
 
     config.plugins.push(
-      new webpack.EnvironmentPlugin(process.env)
+      new webpack.EnvironmentPlugin(process.env),
     );
 
     return config;

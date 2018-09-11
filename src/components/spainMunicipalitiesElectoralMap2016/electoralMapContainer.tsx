@@ -3,6 +3,7 @@ import { FeatureCollection, GeometryObject, MultiLineString } from 'geojson';
 import { ElectoralVote, MapInfo } from './viewModel';
 import { getGeoEntities, geoAreaTypes, getMesh } from '../../common/geo/spain';
 import { ElectoralMapComponent } from './electoralMap';
+import { trackPromise } from 'react-promise-tracker';
 import { mapElectoralVotesModelToVM, mapMapInfoModelToVM } from './mapper';
 import { mapAPI } from '../../rest-api/api/map';
 
@@ -16,6 +17,7 @@ interface State {
   electoralVotes: ElectoralVote[];
   geoEntities: FeatureCollection<GeometryObject, any>;
   mesh: MultiLineString;
+  load?: boolean;
 }
 
 export class ElectoralMapContainer extends React.PureComponent<Props, State> {
@@ -26,7 +28,13 @@ export class ElectoralMapContainer extends React.PureComponent<Props, State> {
   };
 
   static async getInitialProps() {
-    const map = await mapAPI.fetchMapById(mapId);
+    const map = await trackPromise(mapAPI.fetchMapById(mapId));
+
+    const myPromise = await trackPromise(new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({});
+      }, 2000);
+    }));
 
     return {
       mapInfo: mapMapInfoModelToVM(map),
@@ -39,7 +47,6 @@ export class ElectoralMapContainer extends React.PureComponent<Props, State> {
 
   loadMapData = async () => {
     const electoralVoteEntities = await require('../../map-data/spain/0001_spain2016MunicipalitiesElectoralVotes.json');
-
     this.setState({
       electoralVotes: mapElectoralVotesModelToVM(electoralVoteEntities),
       geoEntities: getGeoEntities(geoAreaTypes.municipalities),

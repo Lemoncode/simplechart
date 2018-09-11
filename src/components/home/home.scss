@@ -1,6 +1,12 @@
 .home {
-  margin-top: 2rem;
-  margin-left: 2rem;
-  display: flex;
-  flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 40%;
 }
