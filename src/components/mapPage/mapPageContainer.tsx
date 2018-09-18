@@ -1,9 +1,14 @@
 import * as React from 'react';
 import { MapPageLayout } from './MapPageLayout';
 import { Tag } from './viewModel';
+import { MapInfo } from '../spainMunicipalitiesElectoralMap2016/viewModel';
+import { mapAPI } from '../../rest-api/api/map';
+import { mapMapInfoModelToVM } from '../spainMunicipalitiesElectoralMap2016/mapper';
+
+const mapId = 1;
 
 interface Props {
-
+  mapInfo: MapInfo;
 }
 
 interface State {
@@ -24,6 +29,14 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
     }
   }
 
+  static async getInitialProps() {
+    const map = await mapAPI.fetchMapById(mapId);
+
+    return {
+      mapInfo: mapMapInfoModelToVM(map),
+    };
+  }
+
   private onUpdateDescription = (field, value) => {
     this.setState(updateDescription(field, value));
   }
@@ -39,7 +52,9 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
   public render() {
     return (
       <div className="container-fluid row">
-        <MapPageLayout description={this.state.description}
+        <MapPageLayout
+        mapInfo={this.props.mapInfo}
+        description={this.state.description}
           tags={this.state.tags}
           onUpdateDescription={this.onUpdateDescription}
           onUpdateTags={this.onUpdateTags}

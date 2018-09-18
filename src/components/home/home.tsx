@@ -15,7 +15,7 @@ export const Home: React.StatelessComponent<Props> = (props) => (
       props.maps.map((map) => (
         <Link
           key={map.id}
-          href={routes.mapPageLayout/* map.url */}
+          href={routes.mapPageLayout}
         >
           <a>{map.title}</a>
         </Link>
