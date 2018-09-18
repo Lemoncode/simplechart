@@ -59,8 +59,6 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
           onUpdateDescription={this.onUpdateDescription}
           onUpdateTags={this.onUpdateTags}
           onDelete={this.onDeleteTags} />
-
-
       </div>
     );
   }
@@ -69,13 +67,11 @@ export class MapPageContainer extends React.PureComponent<Props, State>  {
 export const updateDescription = (field: string, value: any) => (state: State) => ({
   ...state,
   [field]: value
-
 });
 
 export const updateTags = (field: string, value: string) => (state: State) => ({
   ...state,
   tags: [...state.tags, value]
-  
 });
 
 
