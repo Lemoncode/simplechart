@@ -24,7 +24,19 @@ npm start
 
 Finally, open your browser in http://localhost:8080 and you will see the project running.
 
-### Instructions to launch the back-end server
+### Instructions to launch Production mode
+
+First we need to build app:
+
+```bash
+npm run build
+```
+
+Run app in `production` mode:
+
+```bash
+npm run start:prod
+```
 
 In order to launch the fake back-end server, just run the following command:
 
@@ -32,9 +44,9 @@ In order to launch the fake back-end server, just run the following command:
 npm run json-server
 ```
 
-Once it starts, you can open your browser in http://localhost:3000 and get the available results.
+Once it starts, you can open your browser in http://localhost:8080 and get the available results.
 
 # About Lemoncode
 
 We are a team of long-term experienced freelance developers, established as a group in 2010.
-We specialize in Front End technologies and .NET. [Click here](http://lemoncode.net/services/en/#en-home) to get more info about us. 
+We specialize in Front End technologies and .NET. [Click here](http://lemoncode.net/services/en/#en-home) to get more info about us.
