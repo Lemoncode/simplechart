@@ -37,6 +37,7 @@
     "qs": "^6.5.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-tag-input": "^5.1.2",
     "topojson-client": "^3.0.0",
     "topojson-simplify": "^3.0.2",
     "whatwg-fetch": "^2.0.3"
